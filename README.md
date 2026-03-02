@@ -6,7 +6,8 @@
   - [Типы данных](https://serjeycom.github.io/swift/types)
   - [Опциональные типы](https://serjeycom.github.io/swift/optionals)
   - [Базовые операторы](https://serjeycom.github.io/swift/smooth_operator)
-- Коллекции
+- **Коллекции**
   - [Массивы (Array)](https://serjeycom.github.io/swift/array)
   - [Множества (Set)](https://serjeycom.github.io/swift/set)
   - [Словари (Dictionary)](https://serjeycom.github.io/swift/dick)
+- **Классы и структуры**
