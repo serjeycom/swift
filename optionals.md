@@ -436,4 +436,4 @@ print(display)
 
 ## Далее
 
-### [Базовые операторы](https://serjey.com/swift/basic/smooth_operator)
+### [Базовые операторы](https://serjeycom.github.io/swift/smooth_operator)
