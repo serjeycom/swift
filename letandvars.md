@@ -368,4 +368,4 @@ let result2 = Double(a) / Double(b)  // 2.5
 
 ## Далее
 
-### [Переменные и константы](https://serjey.com/swift/basic/types)
+### [Типы данных](https://serjeycom.github.io/swift/types)
