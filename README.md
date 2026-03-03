@@ -6,6 +6,7 @@
   - [Типы данных](https://serjeycom.github.io/swift/types)
   - [Опциональные типы](https://serjeycom.github.io/swift/optionals)
   - [Базовые операторы](https://serjeycom.github.io/swift/smooth_operator)
+  - [Вычисляемые и ленивые поля](https://serjeycom.github.io/swift/computed)
 - **Коллекции**
   - [Массивы (Array)](https://serjeycom.github.io/swift/array)
   - [Множества (Set)](https://serjeycom.github.io/swift/set)
