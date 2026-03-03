@@ -348,4 +348,4 @@ struct ContentView: View {
 
 ## Далее
 
-### [Переменные и константы](https://serjey.com/swift/basic/letandvars%29)
+### [Переменные и константы](https://serjey.com/swift/basic/letandvars)
