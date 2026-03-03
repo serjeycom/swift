@@ -214,4 +214,4 @@ let correctResult = Double(a) / Double(b)  // 2.5
 
 ## Далее
 
-### [Вычисляемые и ленивые поля](https://serjey.com/swift/basic/computed)
+### [Вычисляемые и ленивые поля](https://serjeycom.github.io/swift/computed)
