@@ -493,12 +493,6 @@ for (key, value) in dict {
 
 Решение можете присылать [сюда](https://t.me/swift_learning)
 
-## Что дальше? 🚀
+## Далее
 
-Поздравляю! Вы освоили `Dictionary` — мощный инструмент для хранения связанных данных. Теперь вы готовы к изучению:
-
-| Тема | Описание |
-|------|----------|
-| [**Множества (Set)**](https://cerjey.github.io/swift/set) | Коллекции уникальных значений |
-| [**Опционалы**](https://cerjey.github.io/swift/optionals) | Безопасная работа с nil |
-| [**Функции**](https://cerjey.github.io/swift/functions) | Создание и использование функций |
+### [Словари](https://serjeycom.github.io/swift/func)
