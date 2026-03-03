@@ -495,4 +495,4 @@ for (key, value) in dict {
 
 ## Далее
 
-### [Словари](https://serjeycom.github.io/swift/func)
+### [Функции](https://serjeycom.github.io/swift/func)
