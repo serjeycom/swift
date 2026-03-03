@@ -436,4 +436,4 @@ print(display)
 
 ## Далее
 
-### [Вычисляемые и ленивые поля](https://serjey.com/swift/basic/computed)
+### [Базовые операторы](https://serjey.com/swift/basic/smooth_operator.md)
