@@ -567,4 +567,4 @@ number = 20
 
 ## Далее
 
-### [Опционалы](https://serjey.com/swift/basic/optionals)
+### [Опционалы](https://serjeycom.github.io/swift/optionals)
