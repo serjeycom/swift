@@ -21,7 +21,7 @@
 
 ```swift
 func sayHello() {  
-	print("Привет, мир!")  
+    print("Привет, мир!")  
 }
 ```
 
@@ -55,8 +55,8 @@ greet(person: "Анна") // Привет, Анна!
 
 ```swift
 func calculateSum(a: Int, b: Int) {  
-	let result = a + b  
-	print("Сумма: (result)")  
+    let result = a + b  
+    print("Сумма: (result)")  
 }
 
 calculateSum(a: 5, b: 3) // Сумма: 8
@@ -69,8 +69,8 @@ calculateSum(a: 5, b: 3) // Сумма: 8
 
 ```swift
 func calculateSum() {  
-	let result = 1 + 2  
-	print("Сумма: (result)")  
+    let result = 1 + 2  
+    print("Сумма: (result)")  
 }
 ```
 
@@ -108,9 +108,9 @@ let result2 = calculateSum(x: 10, y: 11) // 21
 
 ```swift
 func showAlert(user: User) {  
-	if user.age < 18 {
-		// Показываем Alert
-	}
+    if user.age < 18 {
+        // Показываем Alert
+    }
 }
 ```
 
@@ -124,7 +124,7 @@ func showAlert(user: User) {
 
 ```swift
 func addNumbers(a: Int, b: Int) -> Int {  
-	return a + b  
+    return a + b  
 }
 
 let sum = addNumbers(a: 10, b: 20) // sum = 30
@@ -135,24 +135,24 @@ let sum2 = addNumbers(a: sum, b: 30) // sum2 = 60
 
 ```swift
 func minMax(array: [Int]) -> (min: Int, max: Int) {  
-	// Проверим, что массив не пуст
-	if array.isEmpty {
-		return (min: 0, max: 0)
-	}
+    // Проверим, что массив не пуст
+    if array.isEmpty {
+        return (min: 0, max: 0)
+    }
 
-	// Так как массив точно не пустой – обращаться по индексу безопасно
-	var currentMin = array[0]  
-	var currentMax = array[0]
+    // Так как массив точно не пустой – обращаться по индексу безопасно
+    var currentMin = array[0]  
+    var currentMax = array[0]
 
-	for value in array {  
-		if value < currentMin {  
-			currentMin = value  
-		} else if value > currentMax {  
-			currentMax = value  
-		}  
-	}
+    for value in array {  
+        if value < currentMin {  
+            currentMin = value  
+        } else if value > currentMax {  
+            currentMax = value  
+        }  
+    }
 
-	return (currentMin, currentMax)  
+    return (currentMin, currentMax)  
 }
 
 let bounds = minMax(array: [8, -6, 2, 109, 3, 71])  
@@ -169,10 +169,10 @@ print("Минимум: (bounds.min), максимум: (bounds.max)") // "Мин
 
 ```swift
 struct Driver {
-	// Имя водителя
-	let name: String
-	// Автомобиль – по умолчанию считаем, что автомобиля нет
-	var car: Car?
+    // Имя водителя
+    let name: String
+    // Автомобиль – по умолчанию считаем, что автомобиля нет
+    var car: Car?
 }
 
 // Водитель Даниель, авто нет
