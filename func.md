@@ -45,7 +45,7 @@ sayHello()  // print("Привет, мир!")
 
 ```swift
 func greet(person: String) {  
-	print("Привет, (person)!")  
+    print("Привет, (person)!")  
 }
 
 greet(person: "Анна") // Привет, Анна!
