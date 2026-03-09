@@ -181,10 +181,10 @@ let daniel = Driver(name: "Daniel Morales", car: nil)
 // Функция, которая добавляет автомобиль
 // И возвращает водителя, но у которого уже есть авто
 func addCar(_ car: Car, to driver: Driver) -> Driver {  
-	// Придётся создать изменяемую копию водителя
-	var driver = driver 
-	driver.car = car
-	return driver
+    // Придётся создать изменяемую копию водителя
+    var driver = driver 
+    driver.car = car
+    return driver
 }
 ```
 
@@ -198,7 +198,7 @@ func addCar(_ car: Car, to driver: Driver) -> Driver {
 
 ```swift
 func addCar(_ car: Car, to driver: inout Driver) -> Driver {  
-	driver.car = car
+    driver.car = car
 }
 
 // Водитель Даниель, теперь он должен стать var!
