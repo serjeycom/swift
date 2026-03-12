@@ -12,6 +12,7 @@
   - [Множества (Set)](https://serjeycom.github.io/swift/set)
   - [Словари (Dictionary)](https://serjeycom.github.io/swift/dick)
 - **Классы и структуры**
+  - [Структуры](https://serjeycom.github.io/swift/struct)
 - **Функции**
   - [Функции](https://serjeycom.github.io/swift/func)
 
