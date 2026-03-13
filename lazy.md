@@ -24,9 +24,9 @@ struct Temperature {
     }
 
 	// Аналогичная функция
-	func fahrenheit() -> Double {
+    func fahrenheit() -> Double {
          return celsius * 9 / 5 + 32
-	}
+    }
 }
 
 let temp = Temperature(celsius: 25)
