@@ -13,6 +13,8 @@
   - [Словари (Dictionary)](https://serjeycom.github.io/swift/dick)
 - **Классы и структуры**
   - [Структуры](https://serjeycom.github.io/swift/struct)
+  - [Структуры](https://serjeycom.github.io/swift/class)
+  - [Структуры](https://serjeycom.github.io/swift/init)
 - **Функции**
   - [Функции](https://serjeycom.github.io/swift/func)
 
