@@ -31,7 +31,7 @@ class Person {
     // Инициализатор
     init(name: String, origin String) {
         self.name = name
-        origin = origin
+        self.origin = origin
     }
     
     func introduce() {
