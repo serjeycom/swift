@@ -29,7 +29,7 @@ class Person {
     var origin: String
     
     // Инициализатор
-    init(name: String, ageorigin String) {
+    init(name: String, origin String) {
         self.name = name
         origin = origin
     }
