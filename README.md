@@ -20,4 +20,4 @@
 
 
 - **Poo**
-  - [Прилоежние. Запоры](https://serjeycom.github.io/swift/poo)
+  - [Приложение. Запоры](https://serjeycom.github.io/swift/poo)
