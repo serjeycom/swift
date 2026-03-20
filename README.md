@@ -12,9 +12,11 @@
   - [Множества (Set)](https://serjeycom.github.io/swift/set)
   - [Словари (Dictionary)](https://serjeycom.github.io/swift/dick)
 - **Классы и структуры**
+  - [Протоколы](https://serjeycom.github.io/swift/protocol)
   - [Структуры](https://serjeycom.github.io/swift/struct)
   - [Классы. Начало](https://serjeycom.github.io/swift/class)
   - [Классы. Инициализация](https://serjeycom.github.io/swift/init)
+  - [Классы и Структуры](https://serjeycom.github.io/swift/classVsStruct)
 - **Функции**
   - [Функции](https://serjeycom.github.io/swift/func)
 
