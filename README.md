@@ -20,6 +20,8 @@
 - **Функции**
   - [Функции](https://serjeycom.github.io/swift/func)
 
+- **Задачи**
+  - [Классы и Структуры](https://serjeycom.github.io/swift/classVsStructTask)
 
 - **Poo**
   - [Приложение. Запоры](https://serjeycom.github.io/swift/poo)
