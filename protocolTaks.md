@@ -23,6 +23,8 @@
 
 ## 📜 Протокол `BeautySalonProtocol`
 
+123
+
 ```swift
 import Foundation
 
