@@ -23,8 +23,6 @@
 
 ## 📜 Протокол `BeautySalonProtocol`
 
-123
-
 ```swift
 import Foundation
 
@@ -66,6 +64,7 @@ protocol BeautySalonProtocol {
     /// - Returns: Словарь [ID сотрудника: начисленная сумма]
     func paySalaries() -> [Worker: Int] // Работник : Зарплата
 }
+```
 
 ## 📌 Вывод
 
