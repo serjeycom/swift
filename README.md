@@ -19,7 +19,8 @@
   - [Классы и Структуры](https://serjeycom.github.io/swift/classVsStruct)
 - **Функции**
   - [Функции](https://serjeycom.github.io/swift/func)
-
+- **SwiftUI**
+  - [Начало](https://serjeycom.github.io/swift/swiftui)
 - **Задачи**
   - [Классы и Структуры](https://serjeycom.github.io/swift/classVsStructTask)
 
