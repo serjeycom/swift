@@ -21,6 +21,7 @@
   - [Функции](https://serjeycom.github.io/swift/func)
 - **SwiftUI**
   - [Начало](https://serjeycom.github.io/swift/swiftui)
+  - [Навигация и шторки](https://serjeycom.github.io/swift/navigationAndSteehs)
 - **Задачи**
   - [Классы и Структуры](https://serjeycom.github.io/swift/classVsStructTask)
 
