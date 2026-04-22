@@ -25,5 +25,5 @@
 - **Задачи**
   - [Классы и Структуры](https://serjeycom.github.io/swift/classVsStructTask)
 
-- **Poo**
-  - [Приложение. Запоры](https://serjeycom.github.io/swift/poo)
+- [Визуальные компоненты](https://serjeycom.github.io/swift/buttons)
+
