@@ -25,5 +25,6 @@
 - **Задачи**
   - [Классы и Структуры](https://serjeycom.github.io/swift/classVsStructTask)
 
-- [Визуальные компоненты](https://serjeycom.github.io/swift/buttons)
+- **Визуальные компоненты**
+- [Кнопки](https://serjeycom.github.io/swift/buttons)
 
