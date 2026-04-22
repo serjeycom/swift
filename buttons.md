@@ -1,12 +1,17 @@
-1. Базовая `Кнопка`
+
+# Кнопки в SwiftUI
+
+## 1. Базовая кнопка
 
 ```swift
 Button("Tap me") {
+    /// Вызовется в момент нажатия на кнопку
     print("Tapped")
 }
 ```
 
-2. С системной иконкой
+## 2. С системной иконкой
+
 ```swift
 Button {
     print("Deleted")
@@ -14,22 +19,25 @@ Button {
     Label("Delete", systemImage: "trash")
 }
 ```
+## 3. Кнопки с ролями
 
-3. Интересные кнопки, которые отлично подходят к определённым действиям.
-
-Например для:
-
- - Удаления 
- - Отмены 
- - Закрытия 
- - Подтверждения действия
+ - удаление
+ - отмена
+ - закрытие
+ - подтверждение
 
 ```swift
+/// Доступно несолько стилей в Enum (.confirm, .close и т.д.)
 Button("Remove", role: .destructive) { }
 Button("Cancel", role: .cancel) { }
 ```
+| Роль | Цвет | Применение |
+|------|------|------------|
+| .destructive | Красный | Удаление, опасные действия |
+| .cancel | Полужирный | Отмена, закрытие |
 
-4. Кнопка-переключатель (либо Да / либо Нет )
+## 4. Кнопка-переключатель (Да / Нет)
+
 ```swift
 struct ToggleButton: View {
     @State private var isFavorite = false
@@ -42,63 +50,170 @@ struct ToggleButton: View {
     }
 }
 ```
+## Стили кнопок (подробно)
 
-## Стили кнопок
+`SwiftUI` предоставляет 5 встроенных стилей кнопок. Каждый стиль меняет внешний вид и поведение кнопки.
 
-1. Стили кнопок
+### .automatic (стиль по умолчанию)
+
 ```swift
-Button("Borderless") { }
-	// Автоматический (по умолчанию)
-	.buttonStyle(.automatic)
-	// Минимальный, без фона (для списков)
-	.buttonStyle(.plain)
-	// Как plain, но с поведением тулбара
-	.buttonStyle(.borderless)
-	// Тонкая рамка
-	.buttonStyle(.bordered)
-	// С заливкой (акцентное действие)
-	.buttonStyle(.borderedProminent)
-	/// Запрещаем нажатие на кнопку
-	.disabled(isDisabled)
+Button("Авто") { }
+    .buttonStyle(.automatic)
+```
+Система сама выбирает подходящий стиль в зависимости от контекста:
+- В списке может стать .plain
+- На панели навигации может стать .borderless
+- В основном контенте часто ведёт себя как .bordered
+
+### .plain
+
+```swift
+Button("Обычный") { }
+    .buttonStyle(.plain)
+```
+Особенности:
+- Без фона и рамки
+- Текст меняет цвет при нажатии
+- Идеален для кнопок внутри списков (List)
+- Не добавляет отступов вокруг содержимого
+
+Пример использования в списке:
+
+```swift
+List {
+    Button("Удалить из списка", role: .destructive) { }
+        .buttonStyle(.plain)
+    Button("Поделиться") { }
+        .buttonStyle(.plain)
+}
+```
+### .borderless
+
+
+```swift
+Button("Без границ") { }
+    .buttonStyle(.borderless)
+```
+Особенности:
+- Похож на .plain, но оптимизирован для тулбаров и меню
+- Лучше работает в составе ToolbarItem
+- Сохраняет отзывчивость при нажатии
+
+Пример в тулбаре:
+
+```swift
+.toolbar {
+    ToolbarItem(placement: .topBarTrailing) {
+        Button("Готово") { }
+            .buttonStyle(.borderless)
+    }
+}
+```
+### .bordered
+
+```swift
+Button("Рамка") { }
+    .buttonStyle(.bordered)
+```
+Особенности:
+- Тонкая рамка вокруг кнопки
+- При нажатии рамка меняет цвет
+- Фон остаётся прозрачным
+- Хорошо работает в группах кнопок
+
+### .borderedProminent
+
+```swift
+Button("Выделенная") { }
+    .buttonStyle(.borderedProminent)
+```
+Особенности:
+- Цветная заливка (обычно акцентный цвет приложения)
+- Белый текст поверх заливки
+- При нажатии цвет затемняется
+- Лучший выбор для главного действия на экране
+
+Пример для главной кнопки:
+
+```swift
+VStack {
+    Text("Оплата: $99")
+        .font(.title)
+    
+    Button("Оплатить") { }
+        .buttonStyle(.borderedProminent)
+        .controlSize(.large)
+}
+```
+## Комбинирование стилей с другими модификаторами
+
+### tint() — меняем цвет
+
+```swift
+Button("Красный") { }
+    .buttonStyle(.borderedProminent)
+    .tint(.red)
+
+Button("Синий") { }
+    .buttonStyle(.bordered)
+    .tint(.blue)
+```
+### controlSize() — меняем размер
+
+```swift
+Button("Маленькая") { }
+    .buttonStyle(.borderedProminent)
+    .controlSize(.small)
+
+Button("Большая") { }
+    .buttonStyle(.borderedProminent)
+    .controlSize(.large)
 ```
 
-2. Размеры кнопок
+```swift
+Button("Усиленная") { }
+    .buttonStyle(.bordered)
+    .controlProminence(.increased)
+```
+
+## Размеры кнопок
+
+| Размер | Значение |
+|--------|----------|
+| .mini | Очень маленькая |
+| .small | Маленькая |
+| .regular | Обычная (по умолчанию) |
+| .large | Большая |
+| .extraLarge | Очень большая (iOS 17+) |
+
 ```swift
 Button("Кнопка") { }
-    .controlSize(.mini)    // очень маленькая
-    .controlSize(.small)   // маленькая
-    .controlSize(.regular) // обычная (по умолчанию)
-    .controlSize(.large)   // большая
-    .controlSize(.extraLarge) // очень большая (iOS 17+)
-```    
-
+    .controlSize(.large)
+```
 ## Кнопки в NavigationBar
+
 ```swift
 NavigationStack {
     Text("Главный экран")
         .toolbar {
-            // Левая кнопка
             ToolbarItem(placement: .topBarLeading) {
                 Button("Отмена") { }
             }
             
-            // Правая кнопка
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Сохранить") { }
                     .bold()
             }
             
-            // Принципиальная кнопка
             ToolbarItem(placement: .principal) {
                 Button("Заголовок") { }
             }
         }
 }
 ```
-
 ## Кнопки-Меню
 
- Кнопка, которая по нажатию раскрывается и предлагает один вариант из нескольких
+### По нажатию
 
 ```swift
 Menu {
@@ -109,10 +224,9 @@ Menu {
     Label("Действия", systemImage: "ellipsis.circle")
 }
 ```
+### По долгому нажатию
 
- Кнопка, которая по долгому нажатию на себя раскрывается и предлагает один вариант из нескольких
 ```swift
-// Или кнопка, открывающая меню
 Button {
     // действие при тапе
 } label: {
@@ -123,5 +237,30 @@ Button {
     Button("Удалить", role: .destructive) { }
 }
 ```
+## Состояния кнопки
 
-**Важно:** Кнопки в SwiftUI по умолчанию имеют область нажатия 44x44 pt (Human Interface Guidelines). Не нужно добавлять лишние паддинги для удобства — система уже позаботилась об этом.
+```swift
+@State private var isLoading = false
+
+Button("Отправить") {
+    isLoading = true
+    Task {
+        await sendData()
+        isLoading = false
+    }
+}
+.disabled(isLoading)
+
+Button {
+    // действие
+} label: {
+    if isLoading {
+        ProgressView()
+    } else {
+        Text("Отправить")
+    }
+}
+```
+## Важно
+
+Кнопки в `SwiftUI` по умолчанию имеют область нажатия 44x44 pt (Human Interface Guidelines). Не нужно добавлять лишние паддинги для удобства — система уже позаботилась об этом.
