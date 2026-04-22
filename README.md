@@ -27,4 +27,5 @@
 
 - **Визуальные компоненты**
   - [Кнопки](https://serjeycom.github.io/swift/buttons)
+  - [Поля ввода](https://serjeycom.github.io/swift/inputs)
 
