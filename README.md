@@ -22,6 +22,7 @@
 - **SwiftUI**
   - [Начало](https://serjeycom.github.io/swift/swiftui)
   - [Навигация и шторки](https://serjeycom.github.io/swift/navigationAndSteehs)
+  - [Хранение данных. `@AppStorage`](https://serjeycom.github.io/swift/appStorage)
 - **Задачи**
   - [Классы и Структуры](https://serjeycom.github.io/swift/classVsStructTask)
 
