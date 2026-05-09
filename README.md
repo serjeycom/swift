@@ -25,6 +25,7 @@
   - [Хранение данных. `@AppStorage`](https://serjeycom.github.io/swift/appStorage)
 - **Задачи**
   - [Классы и Структуры](https://serjeycom.github.io/swift/classVsStructTask)
+  - [Бронирование Класса Пианино](https://serjeycom.github.io/swift/pianoTask)
 
 - **Визуальные компоненты**
   - [Кнопки](https://serjeycom.github.io/swift/buttons)
