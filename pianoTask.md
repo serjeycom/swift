@@ -125,19 +125,16 @@ struct TimeButton: View {
 В таком случае мы можем выделить отдельное `computed property` внутри которого регулировать цвет в зависимости от условий:
 
 ```swift
-**var** backgroundColor: Color {  
-/// Если кнопка доступна для выбора  
-**if** isAvailable {  
-**return** .orange  
-}  
-  
-/// Если кнопка выбрана пользователем  
-**if** isSelected {  
-**return** .blue  
-}  
-  
-/// Во всех остальных случаях  
-**return** .gray  
+var backgroundColor: Color {
+    if isSelected {
+        return .blue
+    }
+
+    if isAvailable {
+        return .orange
+    }
+
+    return .gray
 }
 ```
 
