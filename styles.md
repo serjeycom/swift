@@ -1,7 +1,8 @@
 
-# Serjey Company Swift Style Guide
 
-## Goals
+# Swift Style Guide
+
+## Цели
 
 Следование этому руководству по стилю должно:
 
@@ -22,71 +23,6 @@
 
 > ⚠️ **Важно!** 
 > Иными словами – лучше более полно описанный код, через выковыристый, сложный, но короткий.
-
-
-## Содержание
-
--   Именование
-    
-    -   Общие понятия
-        
-    -   Булевы переменные
-        
-    -   Аббревиатуры
-        
-    -   Функции
-        
-    -   Делегаты
-        
-    -   Дженерики
-        
-    -   Опционалы
-        
--   Стиль
-    
-    -   Префиксы классов
-        
-    -   Использование выведенного контекста типа
-        
-    -   Использование `self`
-        
-    -   Запятая в конце
-        
-    -   Кортежи
-        
-    -   Избегайте сложной логики
-        
-    -   `Guard` в начале
-        
-    -   `TODO`, `NOTE` и `MARK`
-        
-    -   Тип `Void`
-        
-    -   Константы
-        
-    -   Использование опционалов
-        
-    -   Неизменяемые значения
-        
-    -   Пустые массивы и словари
-        
-    -   Синтаксический сахар
-        
-    -   Неожиданные ситуации
-        
--   Контроль доступа
-    
--   Организация файлов
-    
-    -   Импорты
-        
-    -   Пробелы
-        
-    -   Соответствие протоколам
-        
-    -   Неиспользуемый код
-        
-    -   Структура файла
     
 
 ## Именование
@@ -139,7 +75,7 @@ let secondSubtitle: String
 
 // ✅ RIGHT
 let submitButtonTitle: String
-let navigationBarSubtitle: UIButton
+let navigationBarSubtitle: String
 ```
     
 -   **Имена должны быть написаны так, чтобы их общая часть была первой, а специфичная — последней.** 
@@ -205,7 +141,7 @@ var isButtonEnabled = false
 
 ### Функции
 
-**Функции обработки событий должны называться как предложения в прошедшем времени.**Субъект можно опустить, если он не нужен для ясности.
+Функции обработки событий должны называться как предложения в прошедшем времени. 
 
 ```swift
 // ⛔️ WRONG
@@ -247,7 +183,7 @@ func findUser(by id: String) { ... }
 
 ### Дженерики
 
-Параметры обобщенных типов должны быть описательными именами в PascalCase. Если имя типа не имеет значимой связи или роли, используйте традиционную заглавную букву, например `T`, `U` или `V`.
+Параметры обобщенных типов должны быть описательными именами в `PascalCase`. Если имя типа не имеет значимой связи или роли, используйте традиционную заглавную букву, например `T`, `U` или `V`.
 
 ```swift
 // ⛔️ WRONG
@@ -282,116 +218,115 @@ class Response<Data> {
 
 При именовании опциональных переменных и свойств избегайте названий вроде `optionalString` или `maybeView`, поскольку их опциональность уже указана в объявлении типа.
 
-Для опциональной привязки (optional binding) используйте затенение (shadowing) оригинального имени, если это уместно, вместо имен вроде `unwrappedView` или `actualLabel`.
+Для опциональной привязки (`optional binding`) используйте затенение (`shadowing`) оригинального имени, если это уместно, вместо имен вроде `unwrappedView` или `actualLabel`.
 
 
 ```swift
 // ⛔️ WRONG
-var optionalSubview: UIView?
+var optionalIndex: Int?
 var volume: Double?
-if let unwrappedSubview = optionalSubview {
+if let unwrappedIndex = optionalIndex {
     if let realVolume = volume {
         // do something with unwrappedSubview and realVolume
     }
 }
 
 // ✅ RIGHT
-var subview: UIView?
+var index: UIView?
 var volume: Double?
 
 // later on...
-if let subview, let volume {
+if let index, let volume {
     // do something with unwrapped subview and volume
 }
 ```
 ## Стиль
 
-### Префиксы классов
-
-Типы Swift автоматически попадают в пространство имён модуля, который их содержит, поэтому не следует добавлять префикс класса, например SV (Serjey Company). Если два имени из разных модулей конфликтуют, их можно различить, указав имя модуля перед именем типа. Однако указывайте имя модуля только тогда, когда есть вероятность путаницы, что бывает редко.
-
-text
-
-import SomeModule
-let myClass = MyModule.UsefulClass()
 
 ### Использование выведенного контекста типа
 
 **Не указывайте типы там, где они легко выводятся.**
 
-text
+```swift
 
 // ⛔️ WRONG
 let host: Host = Host()
+
 // ✅ RIGHT
 let host = Host()
+```
 
-text
-
+```swift
 enum Direction {
- case left
- case right
+   case left
+   case right
 }
+
 func someDirection() -> Direction {
- // ⛔️ WRONG
- return Direction.left
- // ✅ RIGHT
- return .left
+   // ⛔️ WRONG
+   return Direction.left
+   // ✅ RIGHT
+   return .left
 }
+```
 
-### Использование self
+### Использование `self`
 
-**Не используйте `self`, если это не необходимо для устранения неоднозначности или не требуется языком.**  [](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md#redundantSelf)[https://img.shields.io/badge/SwiftFormat-redundantSelf-7B0051.svg](https://img.shields.io/badge/SwiftFormat-redundantSelf-7B0051.svg)
+**Не используйте `self`, если это не необходимо для устранения неоднозначности или не требуется языком.** 
 
-text
-
+```swift
 final class Listing {
- private let isFamilyFriendly: Bool
- private var capacity: Int
- init(capacity: Int, allowsPets: Bool) {
- // ⛔️ WRONG
- self.capacity = capacity
- self.isFamilyFriendly = !allowsPets // `self.` not required here
- // ✅ RIGHT
- self.capacity = capacity
- isFamilyFriendly = !allowsPets
- }
- private func increaseCapacity(by amount: Int) {
- // ⛔️ WRONG
- self.capacity += amount
- self.save()
- fetchData(completion: { [unowned self] in
- self.save()
- })
- // ✅ RIGHT
- capacity += amount
- save()
- fetchData(completion: { [unowned self] in
- save()
- })
- }
-}
-
--   **Когда нужно усилить self, используйте конструкцию `guard let self = self`.**
+    private let isFamilyFriendly: Bool
+    private var capacity: Int
     
+    init(capacity: Int, allowsPets: Bool) {
+        // ⛔️ WRONG
+        self.capacity = capacity  // требуется так как имена в ините и внутри класса совпадают
+        self.isFamilyFriendly = !allowsPets  // self не трубуется
+        
+        // ✅ RIGHT
+        self.capacity = capacity
+        isFamilyFriendly = !allowsPets
+    }
+    
+    private func increaseCapacity(by amount: Int) {
+        // ⛔️ WRONG
+        self.capacity += amount
+        self.save()
+        fetchData(completion: { [unowned self] in
+            self.save()
+        })
+        
+        // ✅ RIGHT
+        capacity += amount
+        save()
+        fetchData(completion: { [unowned self] in
+            save()
+        })
+    }
+}
+```    
 
-text
+```swift
+// ⛔️ WRONG
+func someFunc() {
+    guard let sself = self else { return }
+    ...
+}
 
 // ⛔️ WRONG
 func someFunc() {
- guard let sself = self else { return }
- ...
+    guard let strongSelf = self else { return }
+    ...
 }
-// ⛔️ WRONG
-func someFunc() {
- guard let strongSelf = self else { return }
- ...
-}
+
 // ✅ RIGHT
 func someFunc() {
- guard let self = self else { return }
- ...
+    guard let self = self else { return }
+    ...
 }
+
+```
 
 ### Запятая в конце
 
